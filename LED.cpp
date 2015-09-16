@@ -46,7 +46,7 @@ void LEDoff(){ // switches all LED off
 
     cout << "Switching LED off..." << endl;
 
-    LED("on", 255, 0, "a");
+    LED("on", 0, 0, "a");
 
 }
 
