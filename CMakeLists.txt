@@ -12,7 +12,7 @@ set(EXECUTABLE_OUTPUT_PATH "${CMAKE_BINARY_DIR}/bin")
 
 
 #command to make LED2.cpp and name it LED
-add_executable(LEDMain LEDMain.cpp LED.cpp /home/laborlinux/src/XYTable/XYTable/SourceCode/RS232communication.cpp)
+add_executable(LEDMain LEDMain.cpp LED.cpp /home/xytable/src/RS232com/RS232communication.cpp)
 
 
 

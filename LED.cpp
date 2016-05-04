@@ -27,7 +27,7 @@
 #include <iostream>
 #include <stdbool.h>
 #include <fstream>
-#include "/home/laborlinux/src/XYTable/XYTable/SourceCode/RS232communication.h"
+#include "/home/xytable/src/RS232com/RS232communication.h"
 #include <cstdio>
 #include <cstdlib>
 #include <sstream>
