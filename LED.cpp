@@ -1,4 +1,6 @@
-/* Created by Morag Williams, July 2015.
+/* Created by Janine Müller, 28.02.2017
+
+based in code by Morag Williams, July 2015
 
  A C++ code to replace the existing LED LabVIEW code. The code will turn on and off the LEDs automatically.
  													
@@ -42,23 +44,48 @@
 
 using namespace std;
 
-void LEDoff(){ // switches all LED off
+LED::LED(){}
+
+LED::~LED(){
+
+}
+
+bool LED::SetCurr(double c){
+
+    if ((c>=0.) && (c<=20.)){
+
+        this->_Curr = c;
+        return true;
+    }
+
+    else {
+        cout << "LED only allows between 0 and 20mA" << endl;
+        return false;
+    }
+}
+
+double LED::GetCurr(){
+
+    return this->_Curr;
+}
+
+void LED::LEDoff(){ // switches all LED off
 
     cout << "Switching LED off..." << endl;
 
-    LED("on", 0, 0, "a");
+    LED_func("on", 0, 0, "a");
 
 }
 
-void LEDon(double current){ // switches all LED on
+void LED::LEDon(){ // switches all LED on
 
-    cout << "Switching LED on with " << current << " mA" << endl;
+    cout << "Switching LED on with " << this->_Curr << " mA" << endl;
 
-    LED("on", 255, current, "a");
+    LED_func("on", 255, this->_Curr, "a");
 
 }
 
-void LED(string intref, unsigned char bitmap, double current, char* setaddress){
+void LED::LED_func(string intref, unsigned char bitmap, double current, char* setaddress){
     
     //values entered in, in order: int reference, bitmap, current, dac address, USB port
     
@@ -231,11 +258,3 @@ void LED(string intref, unsigned char bitmap, double current, char* setaddress){
     //cout << "Closing port..." << endl;
     return;
 }
-
-
-
-
-
-
-
-

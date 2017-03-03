@@ -6,28 +6,32 @@ using namespace std;
 
 int main(){
 
-	double current=0;
-    cout << "Which current you would like to use?" << endl;
-    cin >> current;
+  LED* led = new LED();
 
-  	cout << "Switching LED on..." << endl;
+  double current=0;
+  cout << "Which current you would like to use?" << endl;
+  cin >> current;
+  led->SetCurr(current);
 
-  	LEDon(current);
+  cout << "Switching LED on..." << endl;
 
-  	char input;
-  	cout << "Do you want to switch them off again? [y/n]" << endl;
-  	cin >> input;
+  led->LEDon();
 
-  	if((input=='y') | (input=='Y')){
+  char input;
+  cout << "Do you want to switch them off again? [y/n]" << endl;
+  cin >> input;
 
-  		cout << "Switching LED of..." << endl;
-  		LEDoff();
+  if((input=='y') | (input=='Y')){
 
-  	}
+  	cout << "Switching LED off..." << endl;
+  	led->LEDoff();
 
-  	else if((input=='n') | (input=='N')){
-  		
-  	}
+  }
 
-    return 0;
+  else{
+    cout << "Switching LED off..." << endl;
+    led->LEDoff();
+  }
+
+  return 0;
 }
