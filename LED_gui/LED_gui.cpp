@@ -28,9 +28,10 @@ LED_App::LED_App(QWidget *parent)
   CurrentSpinBox->setRange(-20., 20.);
   CurrentSpinBox->setSingleStep(0.01);
   CurrentSpinBox->setValue(0.00);
+  this->led->SetCurr(0.00);
 
   QObject::connect(CurrentSpinBox, QOverload< double >::of(&QDoubleSpinBox::valueChanged), [=](double newValue) {
-  led->SetCurr(newValue);
+  this->led->SetCurr(newValue);
 });
 //   QObject::connect(CurrentSpinBox, qOverload<double>(&QDoubleSpinBox::valueChanged), [=](double newValue) {
 //   led->SetCurr(newValue);
@@ -69,7 +70,7 @@ LED_App::LED_App(QWidget *parent)
 
   setWindowTitle(tr("LED Class"));
 
-  connect(Btn_LED_on, &QPushButton::clicked, [=]() {led->LEDon();});
-  connect(Btn_LED_off, &QPushButton::clicked, [=]() {led->LEDoff();});
+  connect(Btn_LED_on, &QPushButton::clicked, [=]() {this->led->LEDon();});
+  connect(Btn_LED_off, &QPushButton::clicked, [=]() {this->led->LEDoff();});
   connect(Btn_quit, &QPushButton::clicked, &QApplication::quit);
 }
