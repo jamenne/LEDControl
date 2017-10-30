@@ -1,4 +1,4 @@
-# Control the Hamamatsu MiniSpectrometer
+# Control the LED with a currentsource
  Author: Janine Müller
 
 ## Description
