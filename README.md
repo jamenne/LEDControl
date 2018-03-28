@@ -1,5 +1,5 @@
 # Control the LED with a currentsource
- Author: Janine Müller
+ Author: Janine Menne
 
 ## Description
 This Software controls a current source operated via RS232 which allows to pilot UV-LEDs to excite the fibre(s).  
@@ -8,7 +8,7 @@ The repository contains the source code as well as CMakeLists and a GUI version 
 
 ## Requirements to run terminal program
 
-Availability of the following libraries (author: Janine Müller):
+Availability of the following libraries (author: Janine Menne):
 * [RSS232Communication][4]
 
 RS232 Currentsource:
@@ -77,4 +77,4 @@ make
 
 ![](img/LED.png)
 
-[4]: https://git.e5.physik.tu-dortmund.de/jmueller/RS232communication
+[4]: https://github.com/jamenne/RS232Communication
